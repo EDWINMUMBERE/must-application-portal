@@ -1,0 +1,396 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #202536;
+    background: #f2f4ff;
+}
+
+button, input, select {
+    font: inherit;
+}
+
+.page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 35px 16px 100px;
+    background: radial-gradient(ellipse at top, #e8eaff, #f3f5ff 70%);
+}
+
+.university {
+    text-align: center;
+    margin-bottom: 14px;
+}
+
+.logo {
+    width: 120px;
+    height: 120px;
+    display: block;
+    object-fit: contain;
+    margin: 0 auto 12px;
+    border-radius: 50%;
+    background:white;
+    padding: 3px;
+    box-shadow: 0 8px 24px #252c5118;
+}
+
+.university h1 {
+    font-size: 17px;
+    line-height: 1.25;
+    margin: 0 0 10px;
+    font-weight: 800;
+}
+
+.portal-label {
+    display: inline-block;
+    padding: 8px 14px;
+    background: #e5e3ff;
+    border: 1px solid #d8d5ff;
+    border-radius: 30px;
+    color: #3932a8;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 405px;
+    padding: 22px 18px 15px;
+    background: white;
+    border-radius: 13px;
+    box-shadow: 0 16px 38px #24294d12;
+}
+
+.login-card h2,
+.modal-header h2 {
+    font-size: 14px;
+    margin: 0 0 6px;
+    font-weight: 800;
+}
+
+.subtitle,
+.modal-header p {
+    color: #8791a2;
+    font-size: 10px;
+    margin: 0 0 20px;
+}
+
+label {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    margin: 15px 0 7px;
+}
+
+.input-group {
+    height: 38px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #e1e4e9;
+    border-radius: 9px;
+    overflow: hidden;
+    background: white;
+}
+
+.input-icon {
+    width: 38px;
+    height: 100%;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    background: #fafbfc;
+    border-right: 1px solid #e6e8ed;
+    color: #6d7b90;
+}
+
+.input-group input {
+    flex: 1;
+    width: 0;
+    min-width: 0;
+    height: 100%;
+    padding: 0 10px;
+    border: none;
+    outline: none;
+    font-size: 12px;
+}
+
+.input-group input:focus {
+    background: #fcfcff;
+}
+
+.eye {
+    padding: 10px;
+    color: #738095;
+}
+
+.sign-in {
+    margin-top: 19px;
+    width: 100%;
+    height: 38px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    background: linear-gradient(100deg, #3831bd, #302aa1);
+    box-shadow: 0 10px 20px #3730b52b;
+}
+
+.forgot {
+    display: inline-block;
+    margin-top: 15px;
+    color: #778397;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.separator {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #9aa4b5;
+    font-size: 12px;
+    font-weight: bold;
+    margin: 20px 0 14px;
+}
+
+.separator::before,
+.separator::after {
+    content: "";
+    height: 1px;
+    flex: 1;
+    background: #e8eaf0;
+}
+
+.bottom-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.create-button,
+.how-button {
+    min-height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-size: 11px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.create-button {
+    flex: 1;
+    color: #0879ed;
+    border: 1px solid #1684ff;
+    background: white;
+}
+
+.how-button {
+    padding: 0 12px;
+    color: #626b77;
+    border: 1px solid #c5c9cf;
+    background: white;
+}
+
+.assistant {
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 9px;
+}
+
+.assistant-message {
+    width: 205px;
+    padding: 13px;
+    border-radius: 15px;
+    background: white;
+    color: #596273;
+    font-size: 11px;
+    line-height: 1.45;
+    box-shadow: 0 8px 25px #24294d1c;
+}
+
+.ask-misa {
+    padding: 13px 20px;
+    border-radius: 25px;
+    color: white;
+    background: #3730b5;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+/* Registration modal */
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 14px;
+    overflow-y: auto;
+    background: #00000059;
+}
+
+.modal-overlay:target {
+    display: flex;
+}
+
+.register-card {
+    width: 100%;
+    max-width: 465px;
+    margin: auto;
+    border-radius: 14px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 15px 45px #00000020;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 19px 17px 15px;
+    border-bottom: 1px solid #f0f1f4;
+}
+
+.modal-header p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+.close-x {
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    border-radius: 9px;
+    background: #f1f2f4;
+    color: #202536;
+    font-size: 22px;
+    text-decoration: none;
+}
+
+.modal-body {
+    padding: 0 17px 17px;
+}
+
+.modal-body label {
+    margin-top: 17px;
+}
+
+.phone-group {
+    display: flex;
+    gap: 9px;
+    height: 40px;
+}
+
+.phone-group select,
+.phone-group input {
+    min-width: 0;
+    padding: 0 10px;
+    border: 1px solid #e1e4e9;
+    border-radius: 5px;
+    background: white;
+}
+
+.phone-group select {
+    width: 36%;
+    font-size: 11px;
+}
+
+.phone-group input {
+    flex: 1;
+}
+
+.hint {
+    margin: 13px 0 4px;
+    color: #8791a2;
+    font-size: 10px;
+}
+
+.email-link {
+    display: block;
+    margin-top: 12px;
+    color: #398be8;
+    text-align: right;
+    font-style: italic;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    padding: 14px 17px 17px;
+    border-top: 1px solid #f0f1f4;
+}
+
+.close-button,
+.register-submit {
+    min-height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 14px;
+    border-radius: 10px;
+    font-size: 11px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.close-button {
+    color: #68717c;
+    background: white;
+    border: 1px solid #c9cdd2;
+}
+
+.register-submit {
+    color: white;
+    background: #0879ed;
+    border: 1px solid #0875e5;
+}
+
+button:hover,
+.create-button:hover,
+.how-button:hover {
+    filter: brightness(0.96);
+}
+
+@media (max-width: 420px) {
+    .page {
+        padding: 25px 12px 125px;
+    }
+
+    .university h1 {
+        font-size: 15px;
+    }
+
+    .login-card {
+        padding: 20px 16px 15px;
+    }
+
+    .phone-group select {
+        width: 42%;
+    }
+
+    .assistant-message {
+        width: 190px;
+    }
+•	}

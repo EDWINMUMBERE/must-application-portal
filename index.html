@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MUST Online Application Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="page">
+
+        <header class="university">
+            <img src="images/must-logo.png" alt="MUST University Logo" class="logo">
+            <h1>MBARARA UNIVERSITY OF SCIENCE AND<br>
+                TECHNOLOGY</h1>
+            <span class="portal-label">Online Application Portal</span>
+        </header>
+
+        <section class="login-card">
+            <h2>Welcome Back</h2>
+            <p class="subtitle">
+                Log in to access your application dashboard
+            </p>
+
+            <form action="#" method="get">
+                <label for="email">Email Address</label>
+                <div class="input-group">
+                    <span class="input-icon">✉</span>
+                    <input type="email" id="email"
+                           placeholder="name@example.com" required>
+                </div>
+
+                <label for="password">Password</label>
+                <div class="input-group">
+                    <span class="input-icon">🔒</span>
+                    <input type="password" id="password"
+                           placeholder="Enter your password" required>
+                    
+                </div>
+
+                <button type="submit" class="sign-in">
+                    ➜ Sign In
+                </button>
+            </form>
+
+            <a href="#forgot" class="forgot">
+                🔑 Forgot your password?
+            </a>
+
+            <div class="separator">
+                <span>New to the portal?</span>
+            </div>
+
+            <div class="bottom-buttons">
+                <a href="#register" class="create-button">
+                    ♟ Create Account
+                </a>
+
+                <a href="#how-to-apply" class="how-button">
+                    ⓘ How to Apply
+                </a>
+            </div>
+        </section>
+
+        <aside class="assistant">
+            <div class="assistant-message">
+                Hello! I am MISA, your helpful assistant.<br>
+                How can I help you today?
+            </div>
+            <a href="#misa" class="ask-misa">▣ ASK MISA</a>
+        </aside>
+
+    </main>
+
+    <!-- CREATE ACCOUNT INTERFACE -->
+
+    <section id="register" class="modal-overlay">
+        <div class="register-card">
+
+            <header class="modal-header">
+                <div>
+                    <h2>Create Account</h2>
+                    <p>Provide your details to receive a temporary password.</p>
+                </div>
+
+                <a href="#" class="close-x">×</a>
+            </header>
+
+            <form action="#" method="get">
+                <div class="modal-body">
+
+                    <label for="surname">Surname</label>
+                    <div class="input-group">
+                        <span class="input-icon">♟</span>
+                        <input type="text" id="surname"
+                               placeholder="Surname" required>
+                    </div>
+
+                    <label for="other-names">Other Names</label>
+                    <div class="input-group">
+                        <span class="input-icon">♟</span>
+                        <input type="text" id="other-names"
+                               placeholder="Other names" required>
+                    </div>
+
+                    <label for="phone">Phone Number</label>
+                    <div class="phone-group">
+                        <select aria-label="Country code">
+                            <option>Uganda (+256)</option>
+                            <option>Kenya (+254)</option>
+                            <option>Tanzania (+255)</option>
+                        </select>
+
+                        <input type="tel" id="phone"
+                               placeholder="0770000000" required>
+                    </div>
+
+                    <p class="hint">
+                        Use an active phone number to receive notifications.
+                    </p>
+
+                    <label for="register-email">Email Address</label>
+                    <div class="input-group">
+                        <span class="input-icon">✉</span>
+                        <input type="email" id="register-email"
+                               placeholder="myemail@gmail.com" required>
+                    </div>
+
+                    <a href="https://accounts.google.com/signup"
+                       class="email-link" target="_blank"
+                       rel="noopener noreferrer">
+                        Don't have an Email? Click to create ➲
+                    </a>
+
+                </div>
+
+                <footer class="modal-footer">
+                    <a href="#" class="close-button">Close</a>
+                    <button type="submit" class="register-submit">
+                        ♟ Create Account
+                    </button>
+                </footer>
+            </form>
+
+        </div>
+    </section>
+
+</body>
+</html>
